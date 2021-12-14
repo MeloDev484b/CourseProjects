@@ -16,9 +16,9 @@ class Circle
 		double getArea() const;
 		double getCircumference() const;
 	private:
-		int circumference;
-		int area;
-		int radius;
+		double circumference;
+		double area;
+		double radius;
 };
 
 
