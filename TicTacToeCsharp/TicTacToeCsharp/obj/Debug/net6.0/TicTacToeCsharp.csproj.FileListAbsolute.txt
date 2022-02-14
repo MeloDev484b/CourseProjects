@@ -1,0 +1,15 @@
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\bin\Debug\net6.0\TicTacToeCsharp.exe
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\bin\Debug\net6.0\TicTacToeCsharp.deps.json
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\bin\Debug\net6.0\TicTacToeCsharp.runtimeconfig.json
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\bin\Debug\net6.0\TicTacToeCsharp.dll
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\bin\Debug\net6.0\ref\TicTacToeCsharp.dll
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\bin\Debug\net6.0\TicTacToeCsharp.pdb
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\obj\Debug\net6.0\TicTacToeCsharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\obj\Debug\net6.0\TicTacToeCsharp.AssemblyInfoInputs.cache
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\obj\Debug\net6.0\TicTacToeCsharp.AssemblyInfo.cs
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\obj\Debug\net6.0\TicTacToeCsharp.csproj.CoreCompileInputs.cache
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\obj\Debug\net6.0\TicTacToeCsharp.dll
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\obj\Debug\net6.0\ref\TicTacToeCsharp.dll
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\obj\Debug\net6.0\TicTacToeCsharp.pdb
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\obj\Debug\net6.0\TicTacToeCsharp.genruntimeconfig.cache
+C:\Users\dybme\Documents\VS Projects\TicTacToeCsharp\TicTacToeCsharp\obj\Debug\net6.0\TicTacToeCsharp.csproj.AssemblyReference.cache
