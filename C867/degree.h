@@ -1,2 +1,2 @@
 #pragma once
-enum DegreeProgram { SECURITY, NETWORK, SOFTWARE };
+enum DegreeProgram { SECURITY, NETWORK, SOFTWARE, UNDERWATER_BASKET_WEAVING };

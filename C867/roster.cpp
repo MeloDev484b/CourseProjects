@@ -51,11 +51,11 @@ void Roster::remove(std::string studentID)
 	{
 		delete classRosterArray[index];
 		classRosterArray[index] = nullptr;
-		std::cout << studentID << " removed." << std::endl;
+		std::cout << "Student with ID " << studentID << " has been removed." << std::endl;
 	}
 	else
 	{
-		std::cout << studentID << " is not found." << std::endl;
+		std::cout << "Student with ID " << studentID << " is not found." << std::endl;
 	}
 }
 
