@@ -2,41 +2,41 @@
 #include <string>
 #include "roster.h"
 
-using namespace std;
-
 Roster::Roster(){};
-// Release memory used by Student ptrs
+
 Roster::~Roster()
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < ROSTER_SIZE; i++)
 	{
 		delete classRosterArray[i];
 		classRosterArray[i] = nullptr;
 	}
 };
 
-void Roster::add(string studentID, string firstName, string lastName,
-	string emailAddress, int age, int daysInCourse1, int daysInCourse2,
+// Checks for a nullptr in the classRosterArray, then creates a student object and adds it to the classRosterArray[], if there is space.
+void Roster::add(std::string studentID, std::string firstName, std::string lastName,
+	std::string emailAddress, int age, int daysInCourse1, int daysInCourse2,
 	int daysInCourse3, DegreeProgram degreeprogram)
 {
-	int daysInCourseArray[3] = {0, 0, 0};
-	for (int i = 0; i < 5; i++)
+	int daysInCourseArray[DAYS_ARRAY_SIZE] = {0, 0, 0};
+	for (int i = 0; i < ROSTER_SIZE; i++)
 	{
 		if (classRosterArray[i] == nullptr)
 		{
-			classRosterArray[i] = new Student(studentID, firstName, lastName, emailAddress, age, &daysInCourseArray[3], degreeprogram);
+			classRosterArray[i] = new Student(studentID, firstName, lastName, emailAddress, age, &daysInCourseArray[DAYS_ARRAY_SIZE], degreeprogram);
 			classRosterArray[i]->setDaysToComplete(daysInCourse1, daysInCourse2, daysInCourse3);
 			break;
 		}
 	}
 }
-//Check if student exists, remove if student exists, else print error statement that student was not found.
-void Roster::remove(string studentID)
+
+// Check if Student object exists by studentID, remove if student exists, else print error statement that Student was not found.
+void Roster::remove(std::string studentID)
 {
 	bool exists = false;
 	int index = 0;
-	cout << "Removing " << studentID << ". . ." << endl;
-	for (int i = 0; i < 5; i++)
+	std::cout << "Removing " << studentID << ". . ." << std::endl;
+	for (int i = 0; i < ROSTER_SIZE; i++)
 	{
 		if (classRosterArray[i] == nullptr)
 		{
@@ -51,18 +51,18 @@ void Roster::remove(string studentID)
 	{
 		delete classRosterArray[index];
 		classRosterArray[index] = nullptr;
-		cout << studentID << " removed." << endl;
+		std::cout << studentID << " removed." << std::endl;
 	}
 	else
 	{
-		cout << studentID << " is not found." << endl;
+		std::cout << studentID << " is not found." << std::endl;
 	}
 }
 
-//Loop through rosterArray and print each student's info.
+// Loop through classRosterArray[] and print each student's info.
 void Roster::printAll()
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < ROSTER_SIZE; i++)
 	{
 		if (classRosterArray[i] != nullptr)
 		{
@@ -70,13 +70,14 @@ void Roster::printAll()
 		}
 	}
 }
-//Print out the average days student was in courses.
-void Roster::printAverageDaysInCourse(string studentID)
+
+// Uses studentIDfromRoster() to access studentID and prints out the average days a Student object was in their courses.
+void Roster::printAverageDaysInCourse(std::string studentID)
 {
 	int index = 0;
 	float average = 0.0;
-	int tempArray[3] = {};
-	for (int i = 0; i < 5; i++)
+	int tempArray[DAYS_ARRAY_SIZE] = {};
+	for (int i = 0; i < ROSTER_SIZE; i++)
 	{
 		if (classRosterArray[i] != nullptr)
 		{
@@ -86,46 +87,47 @@ void Roster::printAverageDaysInCourse(string studentID)
 			}
 		}
 	}
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < DAYS_ARRAY_SIZE; i++)
 	{
 		tempArray[i] = classRosterArray[index]->getDaysToComplete(i);
 	}
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < DAYS_ARRAY_SIZE; i++)
 	{
 		average += static_cast<float>(tempArray[i]);
 	}
-	average /= 3;
-	cout << studentID << " Average days in class: " << average << endl;
+	average /= DAYS_ARRAY_SIZE;
+	std::cout << studentID << " Average days in class: " << average << std::endl;
 }
 
-//Check if student emails are valid. If an email is invalid, display it to the user.
+// Check if student emails are valid. If an email is invalid, display it to the user. 
+// Valid emails are defined as including both a @ and a . char, but not a ' ' char.
 void Roster::printInvalidEmails()
 {
-	string email;
+	std::string email;
 	char at = '@';
 	char spc = ' ';
 	char per = '.';
-	//Note: A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < ROSTER_SIZE; i++)
 	{
 		if (classRosterArray[i] != nullptr)
 		{
 			email = classRosterArray[i]->getEmailAddress();
-			if (email.find(spc) != string::npos)
+			if (email.find(spc) != std::string::npos)
 			{
-				cout << email << endl;
+				std::cout << email << std::endl;
 			}
-			else if (email.find(at) == string::npos || email.find(per) == string::npos)
+			else if (email.find(at) == std::string::npos || email.find(per) == std::string::npos)
 			{
-				cout << email << endl;
+				std::cout << email << std::endl;
 			}
 		}
 	}
 }
-//Print out all students with the same degreeprogram enum.
+
+// Prints out all students with the same DegreeProgram enum.
 void Roster::printByDegreeProgram(DegreeProgram degreeSearched)
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < ROSTER_SIZE; i++)
 	{
 		if (classRosterArray[i] == nullptr)
 		{
@@ -137,9 +139,10 @@ void Roster::printByDegreeProgram(DegreeProgram degreeSearched)
 	}
 }
 
+// Set all indices in the classRosterArray[] to nullptr.
 void Roster::setRosterToNullptr()
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < ROSTER_SIZE; i++)
 	{
 		if (classRosterArray[i] != nullptr)
 		{
@@ -147,7 +150,9 @@ void Roster::setRosterToNullptr()
 		}
 	}
 }
-string Roster::studentIDfromRoster(int index)
+
+// Access studentID through the Roster object.
+std::string Roster::studentIDfromRoster(int index)
 {
 	if (classRosterArray[index] != nullptr)
 	{
